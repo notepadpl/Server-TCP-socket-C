@@ -1,0 +1,4 @@
+gcc -c -fPIE server.c -o server.o
+gcc server.o -o server -pie
+chmod +x server
+./server

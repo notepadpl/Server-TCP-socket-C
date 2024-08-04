@@ -1,0 +1,41 @@
+/ $
+/ $ export PATH=/busybox-virtual:/data/user/0/com.n0n3m4.droidc/files/:/data/user/0/com.n0n3m4.droidc/files/gcc/bin:/data/user/0/com.n0n3m4.droidc/files/gcc/debugger:/data/user/0/com.n0n3m4.droidc/files/gcc/aarch64-linux-android/bin/:$PATH
+/ $ export CFLAGS="-Os -s -pie"
+/ $ export CXXFLAGS="-Os -s -pie"
+/ $ export SHELL="/data/user/0/com.n0n3m4.droidc/files/sh"
+/ $ export TMPDIR=/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir
+/ $ export CONFIG_SHELL="sh"
+/ $ export PKG_CONFIG_PATH=/data/user/0/com.n0n3m4.droidc/files/gcc/aarch64-linux-android/lib/pkgconfig
+/ $ cd "/storage/emulated/0"
+/storage/emulated/0 $ gcc -c server.c -o server.o
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s: Assembler messages:
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:207: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:208: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:209: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:392: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:393: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:394: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:491: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccNILOBd.s:588: Warning: unterminated string; newline inserted
+/storage/emulated/0 $ gcc server.o -o server
+/storage/emulated/0 $ chmod +x server
+/storage/emulated/0 $ ./server
+"./server": error: Android 5.0 and later only support position-independent executables (-fPIE).
+/storage/emulated/0 $ gcc -c -fPIE server.c -o server.o
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s: Assembler messages:
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:207: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:208: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:209: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:392: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:393: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:394: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:491: Warning: unterminated string; newline inserted
+/data/user/0/com.n0n3m4.droidc/files/gcc/tmpdir/ccelPFnH.s:588: Warning: unterminated string; newline inserted
+/storage/emulated/0 $ gcc server.o -o server -pie
+/storage/emulated/0 $ chmod +x server
+/storage/emulated/0 $ ./server
+Socket created successfully
+ Binding successful
+ Listening...
+^Z[1]+  Stopped                    ./server
+/storage/emulated/0 $
